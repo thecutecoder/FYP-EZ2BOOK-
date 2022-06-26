@@ -1,0 +1,42 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import LoginUserScreen from '../screens/LoginUserScreen';
+import SignUpUserScreen from '../screens/SignUpUserScreen';
+
+
+const Stack = createStackNavigator();
+
+function MyStack() {
+    return (
+      <Stack.Navigator
+        initialRouteName="Sign Out"
+        screenOptions={{
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}>
+        
+        <Stack.Screen
+        name="Sign Out" 
+        component={LoginUserScreen} 
+        options={
+          {title: 'Sign Out' }
+        }
+      />
+
+      <Stack.Screen
+        name="Sign Up" 
+        component={SignUpUserScreen} 
+        options={
+          {title: 'Sign Up' }
+        }
+      />
+       
+      </Stack.Navigator>
+    );
+  }
+
+  export default MyStack;
